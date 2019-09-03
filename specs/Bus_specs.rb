@@ -44,6 +44,8 @@ class BusTest < MiniTest::Test
     # Add Passengers to bus stop
     @bus_stop.add_person_to_queue(@person1)
     @bus_stop.add_person_to_queue(@person2)
+    # Check queue has people waiting
+    assert_equal(2, @bus_stop.queue_size())
     # Collecf passengers from the bus stop
     @bus.collect_all_passengers(@bus_stop.queue())
     # remove passengers from the queue
